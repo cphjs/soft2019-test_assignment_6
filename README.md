@@ -32,6 +32,7 @@ Note also that I used a mock for the order, even though I am only asserting whet
 At this point the pizza bar was functional, but one of the many(oh so many) problems was that it stored all the orders in memory. If poor Mario would accidently restart his computed, all the orders would be lost. Therefore I decided it needs a better solution for that, although I also wanted to keep the in memory storage since it is useful in testing. _Conveniently_, this is a great opportunity to practice inversion of control with dependency injection... And would you look at that?! It is also a part of this assignment. Convenient.
 
 I defined an interface for what I want out of this [order storage](src/main/java/cphb/OrderDataStore.java):
+
 ```
 public interface OrderDataStore {
 
@@ -40,7 +41,8 @@ public interface OrderDataStore {
     public List<Order> getOrders();
     
     public boolean removeOrder(Order order);
-}```
+}
+```
 
 
 There are two classes implementing that interface: [InMemoryOrderDataStore](src/main/java/cphb/InMemoryOrderDataStore.java) and [DatabaseOrderDataStore](src/main/java/cphb/DatabaseOrderDataStore.java), the latter not fully implemented because this is taking too long. 
