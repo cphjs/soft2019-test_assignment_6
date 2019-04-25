@@ -1,0 +1,3 @@
+{
+    "cphb.OrderDataStore": "cphb.InMemoryOrderDataStore"
+}
